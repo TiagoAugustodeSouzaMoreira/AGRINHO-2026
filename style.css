@@ -1,0 +1,248 @@
+/* --- VARIÁVEIS GLOBAIS (Tons Terrosos - Natural e Rústico) --- */
+:root {
+    --cor-primaria: #8B4513; /* Marrom terra */
+    --cor-primaria-escura: #6B8E23; /* Verde oliva */
+    --cor-primaria-hover: #D2691E; /* Laranja queimado */
+    --cor-fundo-site: #F5F5DC; /* Bege claro */
+    --cor-fundo-card: #FFFFFF; /* Branco para contraste */
+    --cor-texto: #333333;
+    --cor-texto-claro: #ffffff;
+    --sombra-card: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --sombra-card-hover: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* --- RESET E BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cor-fundo-site);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* --- CABEÇALHO E NAVEGAÇÃO --- */
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+nav {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+nav a:hover, nav a:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #FFE4B5; /* Tom de pêssego suave */
+    outline: none;
+}
+
+/* --- BANNER --- */
+.banner {
+    background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+                url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1400&q=80");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.banner h2 {
+    font-size: 46px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.resumo {
+    max-width: 750px;
+    margin: 0 auto 30px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* --- SEÇÕES E CARDS --- */
+.content-section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 60px 20px;
+    animation: aparecer 1s ease;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+    position: relative;
+    font-size: 28px;
+}
+
+h2::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background-color: var(--cor-primaria-escura);
+    display: block;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.card {
+    background-color: var(--cor-fundo-card);
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: var(--sombra-card);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-left: 4px solid var(--cor-primaria-escura);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-card-hover);
+}
+
+ul {
+    margin-left: 20px;
+    margin-top: 15px;
+    line-height: 1.8;
+}
+
+ul li {
+    margin-bottom: 12px;
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* --- BOTÕES E FORMULÁRIO --- */
+button {
+    background-color: var(--cor-primaria-escura);
+    color: var(--cor-texto-claro);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+button:hover, button:focus {
+    background-color: var(--cor-primaria-hover);
+    transform: scale(1.05);
+    outline: none;
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: var(--cor-primaria-escura);
+    outline: none;
+    box-shadow: 0 0 5px rgba(107, 142, 35, 0.3);
+}
+
+/* --- RODAPÉ --- */
+footer {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+/* --- RESPONSIVIDADE (Celulares e Tablets) --- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .banner {
+        padding: 80px 20px;
+        background-attachment: scroll;
+    }
+
+    .banner h2 {
+        font-size: 30px;
+    }
+
+    .resumo {
+        font-size: 16px;
+    }
+
+    .content-section {
+        padding: 40px 15px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+}
